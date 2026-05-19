@@ -1,0 +1,14 @@
+# UI
+streamlit>=1.32.0
+
+# Config & contracts
+pydantic>=2.6.0
+pydantic-settings>=2.2.0
+python-dotenv>=1.0.0
+
+# Retrieval (MVP)
+jieba>=0.42.1
+rank-bm25>=0.2.2
+
+# LLM (OpenAI-compatible: OpenAI / DeepSeek / DashScope)
+openai>=1.14.0
