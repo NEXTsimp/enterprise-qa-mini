@@ -24,7 +24,6 @@
 
 - **应用层**：Streamlit
 - **检索**：rank-bm25、jieba
-- **模型接入**：OpenAI 兼容 SDK（`openai`）
 - **配置与模型**：pydantic、pydantic-settings、python-dotenv
 
 ## 架构概览
