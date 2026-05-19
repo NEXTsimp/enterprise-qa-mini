@@ -4,7 +4,7 @@
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.32%2B-FF4B4B)](https://streamlit.io/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
 
-基于 Python 与 Streamlit 的**企业制度 RAG 问答**应用：检索增强生成、流式对话、引用溯源与多轮上下文管理。采用分层与接口化设计，支持本地 Mock 演示，可作为 LLM 应用工程方向的作品集项目。
+基于 Python 与 Streamlit 的**企业制度 RAG 问答**应用：检索增强生成、流式对话、引用溯源与多轮上下文管理。采用分层与接口化设计，支持本地 Mock 演示。
 
 ---
 
