@@ -26,3 +26,7 @@ Thumbs.db
 # Temp
 _restore_snippets/
 *.log
+
+# Demo media (too large for git; use external link or GIF in README)
+docs/screenshots/*.mp4
+docs/screenshots/*.mov
