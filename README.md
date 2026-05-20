@@ -24,7 +24,7 @@
 
 - **应用层**：Streamlit
 - **检索**：rank-bm25、jieba
-- **模型接入**：OpenAI 兼容 SDK（`openai`）
+- **模型接入**：DashScope
 - **配置与契约**：pydantic、pydantic-settings、python-dotenv
 
 ---
@@ -74,21 +74,10 @@ python -m venv .venv
 
 ## 演示素材
 
-素材位于 [`docs/screenshots/`](docs/screenshots/)，清单见 [docs/screenshots/README.md](docs/screenshots/README.md)。
 
-### 录屏（约 3～5 分钟）
+### 演示视频
+https://mcnysqvplb3o.feishu.cn/wiki/Qc0dw7pIGifFOmkD4fZcFj9inyg
 
-建议覆盖：**环境准备 → Mock 启动 → 制度问答 + 展开引用 → 多轮「需要」→ 新建对话**。
-
-> **说明**：完整 `.mp4` 体积较大，**不纳入 Git 仓库**（见 `.gitignore`）。任选其一提交作业即可：
->
-> 1. **外链录屏**（推荐）：上传至 B 站 / 飞书 / 网盘后，将链接填到下方  
-> 2. **GIF**：本地导出 `docs/screenshots/demo-streaming.gif`（建议 ≤ 15MB）并提交  
-> 3. **截图串联**：用下方「关键运行截图」+ 三个测试样例截图代替录屏
-
-**演示视频（外链，请自行填写）**：（待补充，例如 `https://www.bilibili.com/video/...`）
-
-本地录屏文件可放在 `docs/screenshots/demo-streaming.mp4`，仅本地演示用，勿 `git add`。
 
 ### 关键运行截图
 
@@ -124,40 +113,21 @@ python -m venv .venv
 
 ## AI 协作说明
 
-本项目在开发过程中使用 **Cursor（Composer / Agent）** 辅助完成，人机分工大致如下：
+本项目在开发过程中使用 **Cursor** 辅助完成，同时借助了**gemini**和**chatgpt**,人机分工大致如下：
 
 | 环节 | 人工 | AI 辅助 |
 |------|------|---------|
 | 需求与架构 | 确定 RAG 单次调用、流式 UI、多轮路由等产品取舍 | 提供分层目录与接口拆分建议 |
 | 实现 | 审核关键 Prompt、相关性阈值、UI 交互 | 生成/重构 `pipeline`、`qa_service`、Streamlit 聊天页 |
 | 排错 | 确认现象、验收修复 | 根据报错堆栈定位缺失模块、编码与布局问题 |
-| 文档 | 定稿 README 结构与面试表述 | 起草文档，人工删减半成品表述 |
+| 文档 | 定稿 README 结构 | 起草文档，人工删减半成品表述 |
 
 **使用原则**：业务规则以代码与 Prompt 为准人工确认；AI 生成代码经本地运行与样例对话验证后再提交。
 
-**未交由 AI 自动完成的部分**：真实 API Key 管理、生产部署、向量库上线。
 
 ---
 
 ## 排错记录
-
-### 问题：`git push` 失败 `Failed to connect to github.com port 443`
-
-| 项 | 说明 |
-|----|------|
-| **现象** | 本地 `git commit` 成功，`git push` 超时或 `Connection was reset` |
-| **原因** | 当前网络无法稳定访问 `github.com:443` |
-| **处理** | 配置代理（如 `git config --global http.proxy http://127.0.0.1:7890`）或更换网络后重试 |
-| **验证** | `git push origin main` 成功 |
-
-### 问题：`git push` 提示 `fetch first`（远程有本地没有的提交）
-
-| 项 | 说明 |
-|----|------|
-| **现象** | `Updates were rejected because the remote contains work that you do not have locally` |
-| **原因** | 在 GitHub 网页或其他端改过 README，与本地分支分叉 |
-| **处理** | `git pull --rebase origin main`，解决冲突后 `git rebase --continue`，再 `git push origin main` |
-| **验证** | 本地与远程 `main` 一致，网页可见最新 README 与截图 |
 
 ### 问题：启动或 `pytest` 报错 `future feature annotations is not defined`
 
