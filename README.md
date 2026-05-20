@@ -134,7 +134,7 @@ https://mcnysqvplb3o.feishu.cn/wiki/Qc0dw7pIGifFOmkD4fZcFj9inyg
 | 项 | 说明 |
 |----|------|
 | **现象** | `import` 或 `pytest` 时在 `from __future__ import annotations` 处 `SyntaxError` |
-| **原因** | 系统默认 `python` 版本低于 3.10（如 Anaconda 3.6） |
+| **原因** | 系统默认 `python` 版本低于 3.10（ Anaconda 3.6） |
 | **处理** | `py -3.11 -m venv .venv` 后激活，确认 `python --version` ≥ 3.10，再安装依赖 |
 | **验证** | `pytest tests/ -q` 通过 |
 
